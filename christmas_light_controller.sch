@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 3
+Sheet 1 4
 Title ""
 Date ""
 Rev ""
@@ -13,16 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 950  2000 550  700 
-U 608C0A2A
-F0 "power_supply_3.3VDC" 50
-F1 "power_supply_3.3VDC.sch" 50
-F2 "+24V" I R 1500 2100 50 
-F3 "GND" I R 1500 2250 50 
-F4 "+3.3V" O R 1500 2400 50 
-F5 "3.3V_GND" O R 1500 2550 50 
-$EndSheet
 Text HLabel 1550 1000 2    50   UnSpc ~ 0
 +24V
 Wire Wire Line
@@ -38,15 +28,12 @@ F0 "power_supply_24VDC" 50
 F1 "power_supply_24VDC.sch" 50
 F2 "+24V" O R 1500 1000 50 
 F3 "24V_GND" O R 1500 1150 50 
+F4 "PE" O R 1500 1300 50 
 $EndSheet
 Text HLabel 1550 2100 2    50   UnSpc ~ 0
 +24V
-Text HLabel 1550 2250 2    50   UnSpc ~ 0
-GND
 Wire Wire Line
 	1500 2100 1550 2100
-Wire Wire Line
-	1550 2250 1500 2250
 $Comp
 L my_kicad_sch_lib:ATSAMD20G16B U?
 U 1 1 608FE3E6
@@ -127,8 +114,6 @@ Text HLabel 8650 3650 2    50   UnSpc ~ 0
 VDD
 Wire Wire Line
 	8650 3650 8600 3650
-Text HLabel 6200 3450 3    50   UnSpc ~ 0
-3.3V_GND
 Text HLabel 7350 4150 0    50   UnSpc ~ 0
 3.3V_GND
 Wire Wire Line
@@ -188,8 +173,6 @@ Text HLabel 6650 2650 1    50   UnSpc ~ 0
 A_VDD
 Wire Wire Line
 	6650 2650 6650 2700
-Text HLabel 6650 3050 3    50   UnSpc ~ 0
-3.3V_GND
 Wire Wire Line
 	6650 3000 6650 3050
 Text HLabel 10350 2650 1    50   UnSpc ~ 0
@@ -402,4 +385,77 @@ Wire Wire Line
 	6200 3000 6200 3100
 Wire Wire Line
 	6200 3450 6200 3400
+$Sheet
+S 950  3050 550  700 
+U 609B6707
+F0 "relay_output" 50
+F1 "relay_output.sch" 50
+F2 "+24V" I R 1500 3150 50 
+F3 "RELAY_1_EN" I R 1500 3600 50 
+F4 "24V_GND" I R 1500 3300 50 
+$EndSheet
+Text HLabel 1550 3150 2    50   UnSpc ~ 0
++24V
+Wire Wire Line
+	1500 3150 1550 3150
+Text HLabel 1550 3600 2    50   UnSpc ~ 0
+RELAY_1_EN
+Text HLabel 7350 4750 0    50   UnSpc ~ 0
+RELAY_1_EN
+Wire Wire Line
+	7350 4750 7400 4750
+Wire Wire Line
+	1500 3600 1550 3600
+$Sheet
+S 950  2000 550  700 
+U 608C0A2A
+F0 "power_supply_3.3VDC" 50
+F1 "power_supply_3.3VDC.sch" 50
+F2 "+24V" I R 1500 2100 50 
+F3 "+3.3V" O R 1500 2400 50 
+F4 "3.3V_GND" O R 1500 2550 50 
+$EndSheet
+Text HLabel 3600 950  2    50   UnSpc ~ 0
+3.3V_GND
+Text HLabel 3300 950  0    50   UnSpc ~ 0
+24V_GND
+Wire Wire Line
+	3300 950  3350 950 
+Wire Wire Line
+	3350 1050 3300 1050
+Text HLabel 7350 2850 0    50   UnSpc ~ 0
+A_GND
+Wire Wire Line
+	7400 2850 7350 2850
+Text HLabel 6650 3050 3    50   UnSpc ~ 0
+A_GND
+Text HLabel 6200 3450 3    50   UnSpc ~ 0
+A_GND
+Text HLabel 3600 1050 2    50   UnSpc ~ 0
+A_GND
+Wire Wire Line
+	3550 1050 3600 1050
+Text HLabel 1550 3300 2    50   UnSpc ~ 0
+24V_GND
+Wire Wire Line
+	1550 3300 1500 3300
+$Comp
+L Device:Net-Tie_4 NT?
+U 1 1 609C68A7
+P 3450 950
+F 0 "NT?" H 3450 1131 50  0000 C CNN
+F 1 "Net-Tie_4" H 3450 1040 50  0000 C CNN
+F 2 "" H 3450 950 50  0001 C CNN
+F 3 "~" H 3450 950 50  0001 C CNN
+	1    3450 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 950  3600 950 
+Text HLabel 3300 1050 0    50   UnSpc ~ 0
+PE
+Text HLabel 1550 1300 2    50   UnSpc ~ 0
+PE
+Wire Wire Line
+	1550 1300 1500 1300
 $EndSCHEMATC
